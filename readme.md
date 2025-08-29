@@ -1,53 +1,153 @@
-你的博客目录结构如下，每个文件夹和文件的作用如下：
+# 基于Hexo框架的个人博客
 
-## 根目录
+这是一个基于Hexo框架开发的个人博客项目，以下是详细的目录结构说明和可修改的部分。
 
-- _config.yml：Hexo站点的主配置文件，决定博客的基本信息、主题、URL、分页等。**你可以修改此文件，调整站点名称、描述、主题等。**
-- _config.butterfly.yml：Butterfly主题的专属配置文件，控制主题样式、导航、社交、评论等。**你可以修改此文件，定制主题外观和功能。**
-- package.json：Node.js依赖和脚本配置，管理Hexo及插件版本。一般不需手动修改，除非添加/升级插件。
-- .gitignore：Git忽略规则，防止上传缓存、依赖等无关文件。
-- db.json：Hexo生成的缓存数据库文件，无需手动修改。
-- .github：GitHub相关配置（如自动依赖升级），与博客内容无关。
+## 目录结构
 
-## 主要内容目录
+```
+myblog/
+├── .github/                 # GitHub相关配置
+│   └── dependabot.yml       # 依赖自动更新配置
+├── .gitignore               # Git忽略规则
+├── _config.butterfly.yml    # Butterfly主题配置文件
+├── _config.yml              # Hexo主配置文件
+├── package-lock.json        # npm依赖锁定文件
+├── package.json             # 项目依赖和脚本配置
+├── readme.md                # 项目说明文档（当前文件）
+├── scaffolds/               # 文章模板目录
+│   ├── draft.md             # 草稿模板
+│   ├── page.md              # 页面模板
+│   └── post.md              # 文章模板
+├── source/                  # 博客内容和资源主目录
+│   ├── _posts/              # 博客文章目录
+│   │   ├── Linux学习.md
+│   │   ├── git基础.md
+│   │   ├── hello-world.md
+│   │   ├── python_study.md
+│   │   ├── 基于Hexo框架的博客搭建——基础篇.md
+│   │   └── 基于Hexo框架的博客搭建——进阶篇.md
+│   ├── archives/            # 归档页面
+│   │   └── index.md
+│   ├── categories/          # 分类页面
+│   │   └── index.md
+│   ├── css/                 # 自定义CSS样式
+│   │   └── custom.css
+│   ├── fonts/               # 自定义字体
+│   │   └── MyFont.woff2
+│   ├── guestbook/           # 留言板页面
+│   │   └── index.md
+│   ├── images/              # 图片资源目录
+│   │   ├── avatar.jpg       # 头像
+│   │   ├── background-dark.jpg  # 暗色背景
+│   │   ├── background-light.jpg # 亮色背景
+│   │   └── posts/           # 文章图片目录
+│   └── tags/                # 标签页面
+│       └── index.md
+└── themes/                  # 主题目录
+    └── .gitkeep
+```
 
-- public：Hexo生成的静态网站文件（HTML、CSS、JS、图片等），**不要手动修改**，每次`hexo g`会自动覆盖。
-- source：**你的博客内容和资源主目录**，你可以自由修改：
-  - `_posts/`：存放所有文章（Markdown格式），**你可以增删改文章文件**。
-  - `archives/`、`categories/`、`tags/`、`guestbook/`：存放归档、分类、标签、留言板等页面的入口文件（如index.md），**可编辑页面内容和Front-matter元数据**。
-  - `css/`、`fonts/`、`images/`：自定义样式、字体、图片资源，**可添加/替换自己的资源文件**。
-- scaffolds：文章、页面、草稿的模板文件，决定新建时的默认内容。**可自定义模板格式**。
+## 文件和目录详细说明
 
-## 主题相关
+### 根目录文件
 
-- themes：主题目录，存放主题源码（如Butterfly），一般不直接修改，建议通过_config.butterfly.yml配置主题。
+- **_config.yml**：Hexo站点的主配置文件
+  - 包含博客的基本信息（标题、描述、作者等）
+  - 设置URL结构、目录配置、文章格式等
+  - 当前配置：博客标题为"Welcome to my world!"，语言为中文，时区为上海
+  - **可修改**：可调整站点名称、描述、URL等基本设置
 
-## 其他目录
+- **_config.butterfly.yml**：Butterfly主题的专属配置文件
+  - 控制主题样式、导航菜单、代码块样式等
+  - 当前配置：包含主页、归档、标签、分类、留言等导航菜单
+  - **可修改**：可定制主题外观、功能和行为
 
-- node_modules（被.gitignore忽略）：npm依赖包目录，**不要手动修改**。
+- **package.json**：Node.js依赖和脚本配置
+  - 管理Hexo及插件版本
+  - 一般不需手动修改，除非添加/升级插件
 
----
+- **.gitignore**：Git忽略规则
+  - 防止上传缓存、依赖等无关文件
 
-### 你可以修改的部分
+- **.github/dependabot.yml**：GitHub依赖自动更新配置
+  - 与博客内容无关，用于自动管理依赖更新
 
-1. **内容相关**：
-   - _posts：写博客文章。
-   - archives、categories、tags、guestbook：编辑页面内容。
-   - images、css、fonts：添加/替换图片、样式、字体等资源。
+### 内容目录
 
-2. **配置相关**：
-   - _config.yml：站点基础配置。
-   - _config.butterfly.yml：主题样式和功能配置。
+- **source/**：博客内容和资源的主目录
+  - **_posts/**：存放所有博客文章（Markdown格式）
+    - 文章格式：包含YAML前置信息（Front-matter）和Markdown内容
+    - 示例：hello-world.md是默认的欢迎文章
+    - **可修改**：可自由增删改文章，是博客最核心的内容部分
+  
+  - **archives/、categories/、tags/、guestbook/**：特殊页面目录
+    - 存放归档、分类、标签、留言板等页面的入口文件
+    - **可修改**：可编辑这些页面的内容和Front-matter元数据
+  
+  - **css/、fonts/、images/**：资源目录
+    - 存放自定义样式、字体、图片等资源
+    - **可修改**：可添加/替换自己的资源文件，个性化博客外观
 
-3. **模板相关**：
-   - scaffolds：自定义新文章/页面的默认模板。
+- **scaffolds/**：模板目录
+  - 包含post.md（文章）、page.md（页面）、draft.md（草稿）模板
+  - 决定使用`hexo new`命令创建内容时的默认结构
+  - 当前post模板包含title、date和tags字段
+  - **可修改**：可自定义模板，添加常用的Front-matter字段
 
----
+- **themes/**：主题目录
+  - 存放主题源码（当前使用Butterfly主题）
+  - 一般不直接修改，建议通过_config.butterfly.yml配置主题
 
-### 不建议修改的部分
+### 生成目录（不在版本控制中）
 
-- public：每次生成会被覆盖。
-- db.json、node_modules：Hexo自动生成或管理，无需手动编辑。
+- **public/**：Hexo生成的静态网站文件
+  - 包含HTML、CSS、JS、图片等
+  - 由`hexo generate`命令生成
+  - **不建议修改**：每次生成会被覆盖
+
+- **node_modules/**：npm依赖包目录
+  - **不建议修改**：由npm自动管理
+
+- **db.json**：Hexo生成的缓存数据库文件
+  - **不建议修改**：由Hexo自动管理
+
+## 可修改的部分
+
+1. **内容修改**：
+   - **_posts/**：添加、编辑或删除博客文章
+   - **archives/、categories/、tags/、guestbook/**：编辑特殊页面
+   - **images/、css/、fonts/**：添加或替换资源文件
+
+2. **配置修改**：
+   - **_config.yml**：修改站点基本配置
+   - **_config.butterfly.yml**：自定义主题外观和功能
+
+3. **模板修改**：
+   - **scaffolds/**：自定义新文章/页面的默认模板
+
+## 常用Hexo命令
+
+```bash
+# 创建新文章
+hexo new "文章标题"
+
+# 启动本地服务器预览
+hexo server
+
+# 生成静态文件
+hexo generate (简写: hexo g)
+
+# 部署网站
+hexo deploy (简写: hexo d)
+
+# 清除缓存
+hexo clean
+```
+
+## 不建议修改的部分
+
+- **public/**：每次生成会被覆盖
+- **db.json**、**node_modules/**：由Hexo自动生成或管理
 - themes：如需定制主题，建议通过主题配置文件而不是直接改源码。
 
 ---
