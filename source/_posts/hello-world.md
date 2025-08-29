@@ -1,9 +1,27 @@
 ---
 title: Hello World
+date: 2025-08-30
+author: True my world eye
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+# Welcome to my world!!!!
+
+这里是True my world eye的个人博客，用于保存一些小文档。
+
+- 右下角设置可以切换黑/白主题
+
+- 如果有什么想说的或者对网站有任何建议的，都可以在左上角给站主留言（当然站主很可能不会及时看到，所以还是微信联系我吧）
+
+- 欢迎找我加友链
+
+后续会持续更新有趣的内容~
+
+
+
+
 
 ## Quick Start
+
+下面是hexo自带的教程，留作备用
 
 ### Create a new post
 

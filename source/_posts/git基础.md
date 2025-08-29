@@ -1,13 +1,8 @@
 ---
 title: git基础使用指南
 date: 2025-08-29
-<<<<<<< HEAD
 tags: [operation] 
 categories: [operation]
-=======
-tags: [hexo] 
-categories: [hexo]
->>>>>>> 0ee67132b13a0d3c369cded25b0fe4831444903c
 author: True my world eye
 ---
 
@@ -21,6 +16,7 @@ Git 的基本用法可围绕**代码提交、分支管理、远程协作**三大
     git init
     ```
   - **配置用户信息**（全局或当前仓库）：  
+    
     ```bash
     git config --global user.name "你的用户名"
     git config --global user.email "你的邮箱"
