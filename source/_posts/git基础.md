@@ -1,8 +1,13 @@
 ---
 title: git基础使用指南
 date: 2025-08-29
+<<<<<<< HEAD
 tags: [operation] 
 categories: [operation]
+=======
+tags: [hexo] 
+categories: [hexo]
+>>>>>>> 0ee67132b13a0d3c369cded25b0fe4831444903c
 author: True my world eye
 ---
 
@@ -24,16 +29,16 @@ Git 的基本用法可围绕**代码提交、分支管理、远程协作**三大
 
 
   #### 2. 提交代码到本地仓库  
-  - **添加文件到暂存区**：  
-    
-    ```bash
-    git add 文件名  # 单个文件，如 git add main.js
-    git add .       # 添加当前文件夹所有文件
-    ```
-  - **提交到本地仓库**（附带提交说明）：  
-    ```bash
-    git commit -m "修复登录按钮 bug"
-    ```
+- **添加文件到暂存区**：  
+```bash
+git add 文件名  # 单个文件，如 git add main.js
+git add .       # 添加当前文件夹所有文件
+```
+- **提交到本地仓库**（附带提交说明）：  
+
+```bash
+git commit -m "修复登录按钮 bug"
+```
 
 
   ### 二、分支管理：多版本并行开发  
@@ -48,6 +53,7 @@ Git 的基本用法可围绕**代码提交、分支管理、远程协作**三大
     # 简写（创建并切换）：git checkout -b 新分支名
     ```
   - **查看所有分支**：  
+    
     ```bash
     git branch -v
     ```
@@ -128,3 +134,85 @@ Git 的基本用法可围绕**代码提交、分支管理、远程协作**三大
     git add 冲突文件
     git commit -m "解决合并冲突"
     ```
+
+## 仓库换绑
+
+要将已绑定 GitHub 仓库的本地文件夹换绑到另一个仓库，可按以下步骤操作：
+
+### 步骤 1：查看当前远程仓库配置
+
+先确认本地仓库当前绑定的远程仓库地址：
+
+```bash
+git remote -v
+```
+
+输出类似：
+
+```plaintext
+origin  https://github.com/old-user/old-repo.git (fetch)
+origin  https://github.com/old-user/old-repo.git (push)
+```
+
+### 步骤 2：更换远程仓库（二选一）
+
+根据需求选择**直接修改地址**或**先删除再添加**（推荐直接修改，操作更简洁）。
+
+#### 方法 A：直接修改远程地址（推荐）
+
+使用 `git remote set-url` 命令，将现有远程（默认名为 `origin`）的地址替换为新仓库地址：
+
+```bash
+git remote set-url origin https://github.com/new-user/new-repo.git
+```
+
+- 替换 `https://github.com/new-user/new-repo.git` 为**新仓库的 HTTPS 地址**（也可使用 SSH 地址，如 `git@github.com:new-user/new-repo.git`）。
+
+#### 方法 B：先删除旧远程，再添加新远程
+
+如果想完全重置远程配置，可先删除旧远程，再添加新远程：
+
+```bash
+# 1. 删除旧远程（默认名为 origin）
+git remote remove origin  
+
+# 2. 添加新远程（命名仍为 origin，保持习惯）
+git remote add origin https://github.com/new-user/new-repo.git
+```
+
+### 步骤 3：验证新远程配置
+
+再次查看远程信息，确认地址已更新：
+
+```bash
+git remote -v
+```
+
+输出应显示新仓库的地址：
+
+```plaintext
+origin  https://github.com/new-user/new-repo.git (fetch)
+origin  https://github.com/new-user/new-repo.git (push)
+```
+
+### 步骤 4：推送代码到新仓库
+
+如果新仓库是**空仓库**（无任何提交），直接推送所有分支和标签：
+
+```bash
+# 推送当前分支（如 main）并设置 upstream
+git push -u origin main  
+
+# 推送所有分支（若有多个分支）
+git push --all origin  
+
+# 推送所有标签（若有）
+git push --tags origin  
+```
+
+如果新仓库**已有内容**（如初始化的 `README`），需先拉取并合并（避免冲突）：
+
+```bash
+git pull origin main --allow-unrelated-histories  # 合并远程历史（若提示冲突需手动解决）
+git push origin main
+```
