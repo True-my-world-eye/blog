@@ -1,0 +1,220 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/MyFont.woff2') format('woff2'); 
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+#page-header {
+  background: transparent ;
+}
+
+#page-header:not(.not-top-img):before {
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: rgba(24, 24, 24, 0.1);
+content: '';
+}
+
+body {
+  background-image: url('/images/background-light.jpg');
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-position: center center; 
+  background-size: cover; 
+  font-size: 1.1rem;
+  font-family: 'MyFont', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+[data-theme="dark"] body {
+  background-image: url('/images/background-dark.jpg'); 
+}
+
+
+
+#aside-content,
+#content-inner,
+.layout > #post,
+.layout > #page,
+.layout > #archive,
+.layout > #tag,
+.layout > #category {
+  background: transparent; /* 浅色模式下的半透明背景，0.85是透明度，可以自己调 */
+}
+
+/* 适配深色模式 */
+[data-theme="dark"] #aside-content,
+[data-theme="dark"] #content-inner,
+[data-theme="dark"] .layout > #post,
+[data-theme="dark"] .layout > #page,
+[data-theme="dark"] .layout > #archive,
+[data-theme="dark"] .layout > #tag,
+[data-theme="dark"] .layout > #category {
+  background: transparent;
+}
+
+#recent-posts .recent-post-item {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 5px 5px 7px rgba(24, 24, 24, 0.45);
+    border-radius: 25px;
+}
+[data-theme="dark"] #recent-posts .recent-post-item {
+    background-color: rgba(0, 0, 0, 0.65);
+    box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+}
+
+#recent-posts .recent-post-item {
+  transition: all .3s ease-in-out;
+}
+
+#recent-posts .recent-post-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .75);
+}
+[data-theme="dark"] #recent-posts .recent-post-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.45);
+}
+
+#aside-content .card-widget{
+background: rgba(255, 255, 255, 0.7);
+-webkit-box-shadow: 5px 5px 7px rgba(24, 24, 24, 0.45);
+box-shadow: 5px 5px 7px rgba(24, 24, 24, 0.45);
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+-o-transition: all 0.3s;
+-ms-transition: all 0.3s;
+transition: all 0.3s;
+border-radius: 20px;
+}
+[data-theme="dark"] #aside-content .card-widget{
+background: rgba(0, 0, 0, 0.65);
+-webkit-box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25);
+box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25);
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+-o-transition: all 0.3s;
+-ms-transition: all 0.3s;
+transition: all 0.3s;
+border-radius: 20px;
+}
+.text-center {
+text-align: center;
+}
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+*::selection {
+background: #00c4b6;
+color: #f7f7f7;
+}
+*::-webkit-scrollbar {
+width: 5px;
+height: 5px;
+}
+*::-webkit-scrollbar-thumb {
+background: var(--scrollbar-color);
+}
+
+.layout > #post,
+.layout > #page,
+.layout > #tag, 
+.layout > #archive {
+  background: rgba(255, 255, 255, 0.75); 
+  padding: 25px 30px; 
+  border-radius: 25px;
+}
+
+[data-theme="dark"] .layout > #post,
+[data-theme="dark"] .layout > #page,
+[data-theme="dark"] .layout > #tag,
+[data-theme="dark"] .layout > #archive {
+  background: rgba(24, 24, 24, 0.5); 
+}
+
+
+
+code, kbd, pre, samp {
+  font-family: 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace;
+}
+
+#footer {
+  background: transparent; 
+}
+
+
+.v[data-class=v] {
+font-size: 1rem !important;
+text-align: left;
+}
+
+.v[data-class=v] .vwrap {
+border: 2px solid rgba(0, 0, 0, 0.5) !important;
+border-radius: 8px !important;
+margin-bottom: 10px;
+overflow: hidden;
+position: relative;
+padding: 10px;
+}
+[data-theme="dark"] .v[data-class=v] .vwrap {
+border: 2px solid rgba(255, 251, 251, 0.5) !important;
+border-radius: 8px !important;
+margin-bottom: 10px;
+overflow: hidden;
+position: relative;
+padding: 10px;
+}
+
+.v[data-class=v] .vinput {
+border: none;
+resize: none;
+outline: none;
+padding: 10px 5px;
+max-width: 100%;
+font-size: 1rem !important;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+
+.v[data-class=v] .vinput::placeholder {
+  color: #000 !important; 
+  opacity: 0.4 !important;
+}
+.v[data-class=v] .vcol.vcol-70 .vsubmit.vbtn {
+  color: rgba(0, 0, 0, 0.8)!important;
+  background-color: transparent;
+  padding: 8px 16px;
+  border-radius: 3px;
+}
+[data-theme="dark"] .v[data-class=v] .vinput::placeholder {
+  color: #ffffff !important; 
+  opacity: 0.4 !important;
+}
+[data-theme="dark"] .v[data-class=v] .vcol.vcol-70 .vsubmit.vbtn {
+  color: rgba(255, 255, 255, 0.8)!important;
+  background-color: transparent;
+  padding: 8px 16px;
+  border-radius: 3px;
+
+}
+
+.v[data-class=v] .vcol.vcol-70 .vsubmit.vbtn:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: #fff;
+}
+
+.vcards .vcard,
+.vcards .vcard * {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+[data-theme="dark"] 
+.vcards .vcard,
+.vcards .vcard * {
+  color: rgba(255, 253, 253, 0.8) !important;
+}
