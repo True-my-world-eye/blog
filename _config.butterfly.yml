@@ -51,7 +51,7 @@ code_blocks: # 代码块设置
 # Formal（格式）:
 #   icon: link || the description || color（图标: 链接 || 描述 || 颜色）
 social: # 社交媒体设置
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e' # GitHub链接示例
+  fab fa-github: https://github.com/True-my-world-eye || Github || '#24292e' # GitHub链接示例
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe' # 邮箱链接示例
 
 # --------------------------------------
@@ -153,7 +153,7 @@ index_top_img_height: # 首页顶部图片高度
 
 # The subtitle on homepage（首页副标题）
 subtitle: # 副标题设置
-  enable: false # 是否启用副标题
+  enable: true # 是否启用副标题
   # Typewriter Effect（打字机效果）
   effect: true # 是否启用打字机效果
   # Customize typed.js（自定义typed.js）
@@ -293,7 +293,7 @@ aside: # 侧边栏设置
       enable: true # 是否启用按钮
       icon: fab fa-github # 按钮图标
       text: Follow Me # 按钮文本
-      link: https://github.com/xxxxxx # 按钮链接
+      link: https://github.com/True-my-world-eye/blog # 按钮链接
   card_announcement: # 公告卡片设置
     enable: true # 是否启用公告卡片
     content: This is my Blog # 公告内容
@@ -532,7 +532,7 @@ comments: # 评论设置
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk（选择评论系统）
   # Format of two comments system : Disqus,Waline（两个评论系统的格式：Disqus,Waline）
   use: # 使用的评论系统
-  - Valine # 当前使用Valine评论系统
+    - Valine # 当前使用Valine评论系统
   # Display the comment name next to the button（在按钮旁边显示评论系统名称）
   text: true # 是否显示评论系统名称
   # Lazyload: The comment system will be load when comment element enters the browser's viewport.（懒加载：评论系统将在评论元素进入浏览器视口时加载）
@@ -882,13 +882,13 @@ canvas_nest: # 画布巢设置
 
 # Mouse click effects: fireworks（鼠标点击效果：烟花）
 fireworks: # 烟花效果设置
-  enable: false # 是否启用烟花效果
+  enable: true # 是否启用烟花效果
   zIndex: 9999 # z-index属性
   mobile: false # 是否在移动设备上启用
 
 # Mouse click effects: Heart symbol（鼠标点击效果：心形符号）
 click_heart: # 点击心形设置
-  enable: false # 是否启用点击心形效果
+  enable: true # 是否启用点击心形效果 
   mobile: false # 是否在移动设备上启用
 
 # Mouse click effects: words（鼠标点击效果：文字）
