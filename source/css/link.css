@@ -1,0 +1,65 @@
+/* 友链页面样式 (Friend Link Page Style) */
+
+/* 友链卡片样式 (Friend Link Card Style) */
+.flink .site-card {
+  transition: all 0.3s ease; /* 平滑过渡效果 (Smooth Transition Effect) */
+  border-radius: 12px; /* 圆角边框 (Rounded Corners) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 卡片阴影效果 (Card Shadow Effect) */
+}
+
+/* 友链卡片悬停效果 (Friend Link Card Hover Effect) */
+.flink .site-card:hover {
+  transform: translateY(-5px); /* 悬停时向上浮动效果 (Float Up Effect on Hover) */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* 悬停时增强阴影效果 (Enhanced Shadow Effect on Hover) */
+}
+
+/* 友链头像样式 (Friend Link Avatar Style) */
+.flink .site-card .img img {
+  border-radius: 50%; /* 圆形头像 (Circular Avatar) */
+  transition: all 0.5s ease; /* 平滑过渡效果 (Smooth Transition Effect) */
+}
+
+/* 友链头像悬停效果 (Friend Link Avatar Hover Effect) */
+.flink .site-card:hover .img img {
+  transform: rotate(360deg); /* 悬停时头像旋转360度 (Avatar Rotates 360 Degrees on Hover) */
+}
+
+/* 友链名称样式 (Friend Link Name Style) */
+.flink .site-card .info .site-name {
+  font-weight: bold; /* 粗体文字 (Bold Text) */
+  font-size: 1.1em; /* 字体大小 (Font Size) */
+  transition: all 0.3s ease; /* 平滑过渡效果 (Smooth Transition Effect) */
+}
+
+/* 友链名称悬停效果 (Friend Link Name Hover Effect) */
+.flink .site-card:hover .info .site-name {
+  color: #49b1f5; /* 悬停时文字变为蓝色 (Text Changes to Blue on Hover) */
+}
+
+/* 友链分类标题样式 (Friend Link Category Title Style) */
+.flink .flink-list-item h2 {
+  font-size: 1.5em; /* 字体大小 (Font Size) */
+  font-weight: bold; /* 粗体文字 (Bold Text) */
+  margin-bottom: 1em; /* 底部外边距 (Bottom Margin) */
+  position: relative; /* 相对定位 (Relative Positioning) */
+  padding-left: 1em; /* 左侧内边距 (Left Padding) */
+}
+
+/* 友链分类标题装饰线样式 (Friend Link Category Title Decoration Line Style) */
+.flink .flink-list-item h2:before {
+  content: ""; /* 空内容 (Empty Content) */
+  position: absolute; /* 绝对定位 (Absolute Positioning) */
+  left: 0; /* 左侧对齐 (Left Alignment) */
+  top: 0; /* 顶部对齐 (Top Alignment) */
+  height: 100%; /* 高度100% (Full Height) */
+  width: 5px; /* 宽度5像素 (Width 5 Pixels) */
+  background: #49b1f5; /* 蓝色背景 (Blue Background) */
+  border-radius: 10px; /* 圆角边框 (Rounded Corners) */
+}
+
+/* 友链分类描述样式 (Friend Link Category Description Style) */
+.flink .flink-list-item .flink-list-desc {
+  margin-bottom: 1.5em; /* 底部外边距 (Bottom Margin) */
+  font-style: italic; /* 斜体文字 (Italic Text) */
+  color: #858585; /* 灰色文字 (Gray Text) */
+}

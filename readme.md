@@ -162,3 +162,46 @@ hexo clean
 - public
 
 如需进一步定制，建议优先修改source和配置文件。
+
+
+
+# 下面是备忘录
+
+
+
+## 友链
+
+### 1.创建了友链页面 ：
+
+​	使用 hexo new page link 命令创建了友链页面，并在 source/link/index.md 文件中设置了正确的front-matter，包括 type: link 属性。
+
+### 2.创建了友链数据文件 ：
+
+​	在 source/_data/link.yml 中添加了友链数据，包含了示例友链分类和链接信息。您可以根据需要修改此文件来添加或删除友链。
+
+### 3.在导航菜单中添加了友链入口 ：
+
+​	在 _config.butterfly.yml 文件中的菜单配置部分添加了友链入口，使用了 fas fa-link 图标。
+
+### 4.自定义了友链页面样式 ：
+
+- 创建了 source/css/link.css 文件，添加了友链卡片、头像、名称等元素的样式
+
+- 在 _config.butterfly.yml 的 inject 部分引入了自定义CSS文件
+
+- 在 custom.css 中添加了深色模式下友链页面的透明度设置
+
+### 5.如何添加新友链
+要添加新的友链，只需编辑 source/_data/link.yml 文件，按照现有格式添加新的友链信息即可。例如：
+
+```
+- class_name: 友情链接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: 新朋友的博客
+      link: https://example.com
+      avatar: https://example.com/
+      avatar.jpg
+      descr: 这是一个很棒的博客
+```
+

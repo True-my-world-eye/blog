@@ -1,0 +1,42 @@
+# 友情链接配置文件 (Friends Link Configuration File)
+# 此文件用于配置博客的友情链接页面，支持多个分类和多个链接
+# This file is used to configure the friend links page of the blog, supporting multiple categories and links
+#
+# 配置项说明 (Configuration Items):
+# class_name: 友链类别名称 (Category Name) - 用于对友链进行分类显示
+# class_desc: 友链类别描述 (Category Description) - 对该类别的简短描述
+# link_list: 友链列表 (Link List) - 该类别下的所有友链
+#   - name: 友链名称 (Friend's Site Name) - 对方网站的名称
+#   - link: 友链地址 (Friend's Site URL) - 对方网站的完整URL
+#   - avatar: 友链头像 (Friend's Avatar) - 对方网站的图标或头像URL
+#   - descr: 友链描述 (Friend's Site Description) - 对方网站的简短描述
+#   - email: 友链邮箱 (Friend's Site Email) - 对方网站的邮箱地址
+
+- class_name: 友情链接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: Luxynth
+      link: https://www.luxynth.cn
+      avatar: https://www.luxynth.cn/assets/images/avatar.jpg
+      descr: 我心匪石不可转
+      email: LiXY0809@outlook.com
+
+- class_name: 网站
+  class_desc: 值得推荐的网站
+  link_list:
+    - name: Hexo
+      link: https://hexo.io/zh-cn/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 快速、简洁且高效的博客框架
+    - name: Butterfly
+      link: https://butterfly.js.org/
+      avatar: https://butterfly.js.org/img/avatar.png
+      descr: 美观、强大、易用的Hexo主题
+    - name: Github
+      link: https://github.com/
+      avatar: https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png
+      descr: 全球最大的代码托管平台
+    - name: 掘金
+      link: https://juejin.cn/
+      avatar: https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e08da34488b114bd4c665ba2fa520a31.svg
+      descr: 一个帮助开发者成长的社区

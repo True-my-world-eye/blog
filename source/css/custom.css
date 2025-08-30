@@ -1,220 +1,255 @@
+/* 自定义字体定义 (Custom Font Definition) */
 @font-face {
-  font-family: 'MyFont';
-  src: url('/fonts/MyFont.woff2') format('woff2'); 
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; 
+  font-family: 'MyFont'; /* 字体名称 (Font Name) */
+  src: url('/fonts/MyFont.woff2') format('woff2'); /* 字体文件路径和格式 (Font File Path and Format) */
+  font-weight: normal; /* 字体粗细 (Font Weight) */
+  font-style: normal; /* 字体样式 (Font Style) */
+  font-display: swap; /* 字体显示方式，swap可以防止FOIT (Font Display Method) */
 }
 
+/* 页面头部样式 (Page Header Style) */
 #page-header {
-  background: transparent ;
+  background: transparent; /* 透明背景 (Transparent Background) */
 }
 
+/* 页面头部图片遮罩效果 (Page Header Image Mask Effect) */
 #page-header:not(.not-top-img):before {
-position: absolute;
-width: 100%;
-height: 100%;
-background-color: rgba(24, 24, 24, 0.1);
-content: '';
+  position: absolute; /* 绝对定位 (Absolute Positioning) */
+  width: 100%; /* 宽度100% (Full Width) */
+  height: 100%; /* 高度100% (Full Height) */
+  background-color: rgba(24, 24, 24, 0.1); /* 半透明黑色遮罩 (Semi-transparent Black Mask) */
+  content: ''; /* 空内容 (Empty Content) */
 }
 
+/* 全局页面样式 (Global Page Style) */
 body {
-  background-image: url('/images/background-light.jpg');
-  background-repeat: no-repeat; 
-  background-attachment: fixed; 
-  background-position: center center; 
-  background-size: cover; 
-  font-size: 1.1rem;
-  font-family: 'MyFont', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background-image: url('/images/background-light.jpg'); /* 浅色模式背景图片 (Light Mode Background Image) */
+  background-repeat: no-repeat; /* 背景不重复 (No Background Repeat) */
+  background-attachment: fixed; /* 背景固定 (Fixed Background) */
+  background-position: center center; /* 背景居中 (Centered Background) */
+  background-size: cover; /* 背景覆盖整个区域 (Background Covers Entire Area) */
+  font-size: 1.1rem; /* 字体大小 (Font Size) */
+  font-family: 'MyFont', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; /* 字体系列 (Font Family) */
 }
+
+/* 深色模式下的全局页面样式 (Global Page Style in Dark Mode) */
 [data-theme="dark"] body {
-  background-image: url('/images/background-dark.jpg'); 
+  background-image: url('/images/background-dark.jpg'); /* 深色模式背景图片 (Dark Mode Background Image) */
+}
+/* 内容区域透明背景设置 (Content Area Transparent Background Settings) */
+#aside-content, /* 侧边栏内容 (Sidebar Content) */
+#content-inner, /* 内容区域 (Content Area) */
+.layout > #post, /* 文章页面 (Post Page) */
+.layout > #page, /* 普通页面 (Normal Page) */
+.layout > #archive, /* 归档页面 (Archive Page) */
+.layout > #tag, /* 标签页面 (Tag Page) */
+.layout > #category { /* 分类页面 (Category Page) */
+  background: transparent; /* 浅色模式下的透明背景 (Transparent Background in Light Mode) */
 }
 
-
-
-#aside-content,
-#content-inner,
-.layout > #post,
-.layout > #page,
-.layout > #archive,
-.layout > #tag,
-.layout > #category {
-  background: transparent; /* 浅色模式下的半透明背景，0.85是透明度，可以自己调 */
+/* 适配深色模式 (Dark Mode Adaptation) */
+[data-theme="dark"] #aside-content, /* 深色模式侧边栏内容 (Sidebar Content in Dark Mode) */
+[data-theme="dark"] #content-inner, /* 深色模式内容区域 (Content Area in Dark Mode) */
+[data-theme="dark"] .layout > #post, /* 深色模式文章页面 (Post Page in Dark Mode) */
+[data-theme="dark"] .layout > #page, /* 深色模式普通页面 (Normal Page in Dark Mode) */
+[data-theme="dark"] .layout > #link, /* 深色模式友链页面 (Link Page in Dark Mode) */
+[data-theme="dark"] .layout > #archive, /* 深色模式归档页面 (Archive Page in Dark Mode) */
+[data-theme="dark"] .layout > #tag, /* 深色模式标签页面 (Tag Page in Dark Mode) */
+[data-theme="dark"] .layout > #link, /* 深色模式友链页面 (Link Page in Dark Mode) - 重复项 */
+[data-theme="dark"] .layout > #category { /* 深色模式分类页面 (Category Page in Dark Mode) */
+  background: transparent; /* 深色模式下的透明背景 (Transparent Background in Dark Mode) */
 }
 
-/* 适配深色模式 */
-[data-theme="dark"] #aside-content,
-[data-theme="dark"] #content-inner,
-[data-theme="dark"] .layout > #post,
-[data-theme="dark"] .layout > #page,
-[data-theme="dark"] .layout > #archive,
-[data-theme="dark"] .layout > #tag,
-[data-theme="dark"] .layout > #category {
-  background: transparent;
-}
-
+/* 最近文章卡片样式 (Recent Posts Card Style) */
 #recent-posts .recent-post-item {
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 5px 5px 7px rgba(24, 24, 24, 0.45);
-    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.7); /* 浅色模式下的半透明白色背景 (Semi-transparent White Background in Light Mode) */
+    box-shadow: 5px 5px 7px rgba(24, 24, 24, 0.45); /* 浅色模式下的阴影效果 (Shadow Effect in Light Mode) */
+    border-radius: 25px; /* 圆角边框 (Rounded Corners) */
 }
+
+/* 深色模式下的最近文章卡片样式 (Recent Posts Card Style in Dark Mode) */
 [data-theme="dark"] #recent-posts .recent-post-item {
-    background-color: rgba(0, 0, 0, 0.65);
-    box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25);
-    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.65); /* 深色模式下的半透明黑色背景 (Semi-transparent Black Background in Dark Mode) */
+    box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25); /* 深色模式下的阴影效果 (Shadow Effect in Dark Mode) */
+    border-radius: 25px; /* 圆角边框 (Rounded Corners) */
 }
 
+/* 最近文章卡片过渡效果 (Recent Posts Card Transition Effect) */
 #recent-posts .recent-post-item {
-  transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out; /* 平滑过渡效果 (Smooth Transition Effect) */
 }
 
+/* 最近文章卡片悬停效果 (Recent Posts Card Hover Effect) */
 #recent-posts .recent-post-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .75);
+  transform: scale(1.03); /* 悬停时放大效果 (Scale Up Effect on Hover) */
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .75); /* 悬停时的阴影效果 (Shadow Effect on Hover) */
 }
+
+/* 深色模式下的最近文章卡片悬停效果 (Recent Posts Card Hover Effect in Dark Mode) */
 [data-theme="dark"] #recent-posts .recent-post-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.45);
+  transform: scale(1.03); /* 深色模式下悬停时放大效果 (Scale Up Effect on Hover in Dark Mode) */
+  box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.45); /* 深色模式下悬停时的阴影效果 (Shadow Effect on Hover in Dark Mode) */
 }
 
+/* 侧边栏卡片样式 (Sidebar Card Style) */
 #aside-content .card-widget{
-background: rgba(255, 255, 255, 0.7);
--webkit-box-shadow: 5px 5px 7px rgba(24, 24, 24, 0.45);
-box-shadow: 5px 5px 7px rgba(24, 24, 24, 0.45);
--webkit-transition: all 0.3s;
--moz-transition: all 0.3s;
--o-transition: all 0.3s;
--ms-transition: all 0.3s;
-transition: all 0.3s;
-border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7); /* 浅色模式下的半透明白色背景 (Semi-transparent White Background in Light Mode) */
+  -webkit-box-shadow: 5px 5px 7px rgba(24, 24, 24, 0.45); /* Webkit浏览器的阴影效果 (Shadow Effect for Webkit Browsers) */
+  box-shadow: 5px 5px 7px rgba(24, 24, 24, 0.45); /* 标准阴影效果 (Standard Shadow Effect) */
+  -webkit-transition: all 0.3s; /* Webkit浏览器的过渡效果 (Transition Effect for Webkit Browsers) */
+  -moz-transition: all 0.3s; /* Mozilla浏览器的过渡效果 (Transition Effect for Mozilla Browsers) */
+  -o-transition: all 0.3s; /* Opera浏览器的过渡效果 (Transition Effect for Opera Browsers) */
+  -ms-transition: all 0.3s; /* IE浏览器的过渡效果 (Transition Effect for IE Browsers) */
+  transition: all 0.3s; /* 标准过渡效果 (Standard Transition Effect) */
+  border-radius: 20px; /* 圆角边框 (Rounded Corners) */
 }
+
+/* 深色模式下的侧边栏卡片样式 (Sidebar Card Style in Dark Mode) */
 [data-theme="dark"] #aside-content .card-widget{
-background: rgba(0, 0, 0, 0.65);
--webkit-box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25);
-box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25);
--webkit-transition: all 0.3s;
--moz-transition: all 0.3s;
--o-transition: all 0.3s;
--ms-transition: all 0.3s;
-transition: all 0.3s;
-border-radius: 20px;
+  background: rgba(0, 0, 0, 0.65); /* 深色模式下的半透明黑色背景 (Semi-transparent Black Background in Dark Mode) */
+  -webkit-box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25); /* 深色模式下Webkit浏览器的阴影效果 (Shadow Effect for Webkit Browsers in Dark Mode) */
+  box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25); /* 深色模式下的标准阴影效果 (Standard Shadow Effect in Dark Mode) */
+  -webkit-transition: all 0.3s; /* Webkit浏览器的过渡效果 (Transition Effect for Webkit Browsers) */
+  -moz-transition: all 0.3s; /* Mozilla浏览器的过渡效果 (Transition Effect for Mozilla Browsers) */
+  -o-transition: all 0.3s; /* Opera浏览器的过渡效果 (Transition Effect for Opera Browsers) */
+  -ms-transition: all 0.3s; /* IE浏览器的过渡效果 (Transition Effect for IE Browsers) */
+transition: all 0.3s; /* 标准过渡效果 (Standard Transition Effect) */
+border-radius: 20px; /* 圆角边框 (Rounded Corners) */
 }
+/* 文本居中样式 (Text Center Style) */
 .text-center {
-text-align: center;
+  text-align: center; /* 文本居中对齐 (Text Align Center) */
 }
+/* 全局盒模型设置 (Global Box Model Settings) */
 * {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
+  -webkit-box-sizing: border-box; /* Webkit浏览器的盒模型设置 (Box Model Setting for Webkit Browsers) */
+  -moz-box-sizing: border-box; /* Mozilla浏览器的盒模型设置 (Box Model Setting for Mozilla Browsers) */
+  box-sizing: border-box; /* 标准盒模型设置 (Standard Box Model Setting) */
 }
 
+/* 文本选择样式 (Text Selection Style) */
 *::selection {
-background: #00c4b6;
-color: #f7f7f7;
+  background: #00c4b6; /* 选中文本的背景颜色 (Background Color of Selected Text) */
+  color: #f7f7f7; /* 选中文本的前景颜色 (Foreground Color of Selected Text) */
 }
+/* 滚动条样式 (Scrollbar Style) */
 *::-webkit-scrollbar {
-width: 5px;
-height: 5px;
+  width: 5px; /* 滚动条宽度 (Scrollbar Width) */
+  height: 5px; /* 滚动条高度 (Scrollbar Height) */
 }
+/* 滚动条滑块样式 (Scrollbar Thumb Style) */
 *::-webkit-scrollbar-thumb {
-background: var(--scrollbar-color);
+  background: var(--scrollbar-color); /* 滚动条滑块颜色，使用CSS变量 (Scrollbar Thumb Color Using CSS Variable) */
 }
 
-.layout > #post,
-.layout > #page,
-.layout > #tag, 
-.layout > #archive {
-  background: rgba(255, 255, 255, 0.75); 
-  padding: 25px 30px; 
-  border-radius: 25px;
+/* 主要内容区域样式 (Main Content Area Style) */
+.layout > #post, /* 文章页面 (Post Page) */
+.layout > #page, /* 普通页面 (Normal Page) */
+.layout > #tag, /* 标签页面 (Tag Page) */
+.layout > #archive { /* 归档页面 (Archive Page) */
+  background: rgba(255, 255, 255, 0.75); /* 浅色模式下的半透明白色背景 (Semi-transparent White Background in Light Mode) */
+  padding: 25px 30px; /* 内边距 (Padding) */
+  border-radius: 25px; /* 圆角边框 (Rounded Corners) */
 }
 
-[data-theme="dark"] .layout > #post,
-[data-theme="dark"] .layout > #page,
-[data-theme="dark"] .layout > #tag,
-[data-theme="dark"] .layout > #archive {
-  background: rgba(24, 24, 24, 0.5); 
+/* 深色模式下的主要内容区域样式 (Main Content Area Style in Dark Mode) */
+[data-theme="dark"] .layout > #post, /* 深色模式下的文章页面 (Post Page in Dark Mode) */
+[data-theme="dark"] .layout > #page, /* 深色模式下的普通页面 (Normal Page in Dark Mode) */
+[data-theme="dark"] .layout > #tag, /* 深色模式下的标签页面 (Tag Page in Dark Mode) */
+[data-theme="dark"] .layout > #archive { /* 深色模式下的归档页面 (Archive Page in Dark Mode) */
+  background: rgba(24, 24, 24, 0.5); /* 深色模式下的半透明黑色背景 (Semi-transparent Black Background in Dark Mode) */
 }
 
 
 
+/* 代码相关元素的字体设置 (Font Settings for Code-related Elements) */
 code, kbd, pre, samp {
-  font-family: 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace;
+  font-family: 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace; /* 等宽字体，适合代码显示 (Monospace Font, Suitable for Code Display) */
 }
 
+/* 页脚样式 (Footer Style) */
 #footer {
-  background: transparent; 
+  background: transparent; /* 透明背景 (Transparent Background) */
 }
 
 
+/* Valine评论系统样式 (Valine Comment System Style) */
 .v[data-class=v] {
-font-size: 1rem !important;
-text-align: left;
+  font-size: 1rem !important; /* 评论文字大小 (Comment Text Size) */
+  text-align: left; /* 文本左对齐 (Text Align Left) */
 }
 
+/* Valine评论输入框外层容器样式 (Valine Comment Input Wrapper Style) */
 .v[data-class=v] .vwrap {
-border: 2px solid rgba(0, 0, 0, 0.5) !important;
-border-radius: 8px !important;
-margin-bottom: 10px;
-overflow: hidden;
-position: relative;
-padding: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.5) !important; /* 浅色模式下的边框 (Border in Light Mode) */
+  border-radius: 8px !important; /* 圆角边框 (Rounded Corners) */
+  margin-bottom: 10px; /* 底部外边距 (Bottom Margin) */
+  overflow: hidden; /* 溢出隐藏 (Overflow Hidden) */
+  position: relative; /* 相对定位 (Relative Positioning) */
+  padding: 10px; /* 内边距 (Padding) */
 }
+/* 深色模式下的Valine评论输入框外层容器样式 (Valine Comment Input Wrapper Style in Dark Mode) */
 [data-theme="dark"] .v[data-class=v] .vwrap {
-border: 2px solid rgba(255, 251, 251, 0.5) !important;
-border-radius: 8px !important;
-margin-bottom: 10px;
-overflow: hidden;
-position: relative;
-padding: 10px;
+  border: 2px solid rgba(255, 251, 251, 0.5) !important; /* 深色模式下的边框 (Border in Dark Mode) */
+  border-radius: 8px !important; /* 圆角边框 (Rounded Corners) */
+  margin-bottom: 10px; /* 底部外边距 (Bottom Margin) */
+  overflow: hidden; /* 溢出隐藏 (Overflow Hidden) */
+  position: relative; /* 相对定位 (Relative Positioning) */
+  padding: 10px; /* 内边距 (Padding) */
 }
 
+/* Valine评论输入框样式 (Valine Comment Input Style) */
 .v[data-class=v] .vinput {
-border: none;
-resize: none;
-outline: none;
-padding: 10px 5px;
-max-width: 100%;
-font-size: 1rem !important;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
+  border: none; /* 无边框 (No Border) */
+  resize: none; /* 禁止调整大小 (Disable Resizing) */
+  outline: none; /* 无轮廓 (No Outline) */
+  padding: 10px 5px; /* 内边距 (Padding) */
+  max-width: 100%; /* 最大宽度 (Maximum Width) */
+  font-size: 1rem !important; /* 字体大小 (Font Size) */
+  -webkit-box-sizing: border-box; /* Webkit浏览器的盒模型设置 (Box Model Setting for Webkit Browsers) */
+  box-sizing: border-box; /* 标准盒模型设置 (Standard Box Model Setting) */
 }
 
 
+/* Valine评论输入框占位符样式 (Valine Comment Input Placeholder Style) */
 .v[data-class=v] .vinput::placeholder {
-  color: #000 !important; 
-  opacity: 0.4 !important;
+  color: #000 !important; /* 浅色模式下的占位符颜色 (Placeholder Color in Light Mode) */
+  opacity: 0.4 !important; /* 透明度 (Opacity) */
 }
+/* Valine评论提交按钮样式 (Valine Comment Submit Button Style) */
 .v[data-class=v] .vcol.vcol-70 .vsubmit.vbtn {
-  color: rgba(0, 0, 0, 0.8)!important;
-  background-color: transparent;
-  padding: 8px 16px;
-  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.8)!important; /* 浅色模式下的按钮文字颜色 (Button Text Color in Light Mode) */
+  background-color: transparent; /* 透明背景 (Transparent Background) */
+  padding: 8px 16px; /* 内边距 (Padding) */
+  border-radius: 3px; /* 圆角边框 (Rounded Corners) */
 }
+/* 深色模式下的Valine评论输入框占位符样式 (Valine Comment Input Placeholder Style in Dark Mode) */
 [data-theme="dark"] .v[data-class=v] .vinput::placeholder {
-  color: #ffffff !important; 
-  opacity: 0.4 !important;
+  color: #ffffff !important; /* 深色模式下的占位符颜色 (Placeholder Color in Dark Mode) */
+  opacity: 0.4 !important; /* 透明度 (Opacity) */
 }
+/* 深色模式下的Valine评论提交按钮样式 (Valine Comment Submit Button Style in Dark Mode) */
 [data-theme="dark"] .v[data-class=v] .vcol.vcol-70 .vsubmit.vbtn {
-  color: rgba(255, 255, 255, 0.8)!important;
-  background-color: transparent;
-  padding: 8px 16px;
-  border-radius: 3px;
-
+  color: rgba(255, 255, 255, 0.8)!important; /* 深色模式下的按钮文字颜色 (Button Text Color in Dark Mode) */
+  background-color: transparent; /* 透明背景 (Transparent Background) */
+  padding: 8px 16px; /* 内边距 (Padding) */
+  border-radius: 3px; /* 圆角边框 (Rounded Corners) */
 }
 
+/* Valine评论提交按钮悬停效果 (Valine Comment Submit Button Hover Effect) */
 .v[data-class=v] .vcol.vcol-70 .vsubmit.vbtn:hover {
-  background-color: rgba(0, 0, 0, 0.3) !important;
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3) !important; /* 悬停时的背景颜色 (Background Color on Hover) */
+  color: #fff; /* 悬停时的文字颜色 (Text Color on Hover) */
 }
 
+/* Valine评论卡片样式 (Valine Comment Card Style) */
 .vcards .vcard,
 .vcards .vcard * {
-  color: rgba(0, 0, 0, 0.8) !important;
+  color: rgba(0, 0, 0, 0.8) !important; /* 浅色模式下的评论文字颜色 (Comment Text Color in Light Mode) */
 }
+/* 深色模式下的Valine评论卡片样式 (Valine Comment Card Style in Dark Mode) */
 [data-theme="dark"] 
 .vcards .vcard,
 .vcards .vcard * {
-  color: rgba(255, 253, 253, 0.8) !important;
+  color: rgba(255, 253, 253, 0.8) !important; /* 深色模式下的评论文字颜色 (Comment Text Color in Dark Mode) */
 }
