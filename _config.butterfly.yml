@@ -50,7 +50,7 @@ code_blocks: # 代码块设置
 # Social media links（社交媒体链接）
 # Formal（格式）:
 #   icon: link || the description || color（图标: 链接 || 描述 || 颜色）
-social:# 社交媒体设置
+social: # 社交媒体设置
   # fab fa-github: https://github.com/xxxxx || Github || '#24292e' # GitHub链接示例
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe' # 邮箱链接示例
 
@@ -105,7 +105,7 @@ cover: # 文章封面设置
   aside_enable: true # 是否在侧边栏显示文章封面
   archives_enable: true # 是否在归档页显示文章封面
   # When cover is not set, the default cover is displayed（当未设置封面时，显示默认封面）
-  default_cover:# 默认封面图片路径
+  default_cover: # 默认封面图片路径
     # - xxx.jpg # 默认封面图片示例
 
 # Replace Broken Images（替换损坏的图片）
@@ -214,7 +214,7 @@ post_copyright: # 文章版权信息设置
 reward: # 打赏设置
   enable: false # 是否启用打赏功能
   text: # 打赏文本
-  QR_code:# 二维码设置
+  QR_code: # 二维码设置
     # - img: /img/wechat.jpg # 微信支付二维码图片
     #   link: # 链接
     #   text: wechat # 文本说明

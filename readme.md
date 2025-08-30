@@ -205,3 +205,18 @@ hexo clean
       descr: 这是一个很棒的博客
 ```
 
+# Hexo博客图片引用转换方案
+## 批量转换脚本
+我已经创建了一个PowerShell脚本
+
+可以批量将Markdown文件中的图片引用从 ![]() 格式转换为Hexo的 {% asset_img %} 格式。
+
+脚本位于 G:\myblog\convert_image_refs.ps1 ，使用方法如下：
+
+```
+powershell -File G:\myblog\convert_image_refs.ps1 -FilePath <Markdown文件路径>
+```
+脚本执行后会显示转换的结果统计：
+
+- 原始图片引用数量
+- 转换后asset_img标签数量
