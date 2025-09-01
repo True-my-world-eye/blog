@@ -11,6 +11,7 @@ myblog/
 ├── .gitignore               # Git忽略规则
 ├── _config.butterfly.yml    # Butterfly主题配置文件
 ├── _config.yml              # Hexo主配置文件
+├── convert_image_refs.ps1   # 图片引用格式转换脚本
 ├── package-lock.json        # npm依赖锁定文件
 ├── package.json             # 项目依赖和脚本配置
 ├── readme.md                # 项目说明文档（当前文件）
@@ -31,7 +32,8 @@ myblog/
 │   ├── categories/          # 分类页面
 │   │   └── index.md
 │   ├── css/                 # 自定义CSS样式
-│   │   └── custom.css
+│   │   ├── custom.css       # 自定义全局样式
+│   │   └── link.css         # 友链页面样式
 │   ├── fonts/               # 自定义字体
 │   │   └── MyFont.woff2
 │   ├── guestbook/           # 留言板页面
@@ -39,8 +41,9 @@ myblog/
 │   ├── images/              # 图片资源目录
 │   │   ├── avatar.jpg       # 头像
 │   │   ├── background-dark.jpg  # 暗色背景
-│   │   ├── background-light.jpg # 亮色背景
-│   │   └── posts/           # 文章图片目录
+│   │   └── background-light.jpg # 亮色背景
+│   ├── js/                  # 自定义JavaScript脚本
+│   │   └── announcement.js  # 公告栏动态内容脚本
 │   └── tags/                # 标签页面
 │       └── index.md
 └── themes/                  # 主题目录
@@ -204,6 +207,38 @@ hexo clean
       avatar.jpg
       descr: 这是一个很棒的博客
 ```
+
+## 公告栏
+
+### 1. 公告栏功能实现：
+
+在Butterfly主题中添加了动态公告栏功能，可以显示访客信息、问候语和距离计算。
+
+### 2. 主要功能：
+
+- **实时问候**：根据当前时间显示不同的问候语（早上好、中午好、下午好、晚上好等）
+- **访客地理位置**：显示访客的省份和城市信息
+- **距离计算**：计算访客与站长（服务器）之间的地理距离
+- **IP地址显示**：显示访客的IP地址
+
+### 3. 技术实现：
+
+- 创建了 `source/js/announcement.js` 脚本文件，实现动态内容生成
+- 在 `_config.butterfly.yml` 中修改了公告卡片配置，引入了自定义脚本
+- 使用Haversine公式计算两个地理坐标之间的距离
+- 通过IP地理位置API获取访客位置信息
+
+### 4. 本地与生产环境适配：
+
+- 本地开发环境使用模拟数据，避免API调用失败
+- 生产环境使用实际API获取真实数据
+- 自动检测环境并使用相应的数据源
+
+### 5. 如何修改：
+
+- 可以在 `announcement.js` 中修改服务器位置坐标
+- 可以自定义问候语和显示样式
+- 可以调整更新频率（默认为每小时更新一次）
 
 # Hexo博客图片引用转换方案
 ## 批量转换脚本

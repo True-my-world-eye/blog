@@ -11,6 +11,13 @@
 #   - avatar: 友链头像 (Friend's Avatar) - 对方网站的图标或头像URL
 #   - descr: 友链描述 (Friend's Site Description) - 对方网站的简短描述
 #   - email: 友链邮箱 (Friend's Site Email) - 对方网站的邮箱地址
+#   - siteshot: 友链站点截图 (Friend's Site Screenshot) - 对方网站的截图URL
+#
+# 注意事项 (Notes):
+# - 请根据实际情况修改配置项，确保链接的准确性和完整性
+# - 可以根据需要添加或删除分类和链接
+# - 分类名称和描述应简洁明了，链接数量建议控制在5个以内
+#
 
 - class_name: 友情链接
   class_desc: 那些人，那些事
@@ -20,6 +27,12 @@
       avatar: https://www.luxynth.cn/assets/images/avatar.jpg
       descr: 我心匪石不可转
       email: LiXY0809@outlook.com
+    - name: CCLMSY💫
+      link: https://www.cclmsy.cc/
+      avatar: https://www.cclmsy.cc/assets/avatar/avatar.jpg
+      descr: Never forget nor regret.⭐
+      email: cclmsy@qq.com
+      siteshot: https://source.cclmsy.cc/images/flink/siteshot/siteshot.png
 
 - class_name: 网站
   class_desc: 值得推荐的网站

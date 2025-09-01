@@ -11,6 +11,16 @@ type: link
 # 是否开启评论功能 (Whether to enable comments)
 comments: true
 ---
-
 <!-- 页面内容 (Page Content) -->
-欢迎与我交换友链！(Welcome to exchange friend links with me!)
+
+Welcome to exchange friend links with me!
+
+欢迎与我交换友链！
+```yml
+- name: 
+    link: https://www.hellozhw.cn
+    avatar: https://www.hellozhw.cn/images/avatar.jpg
+    descr: 出卖我的爱~
+    email: hwzhang0722@163.com
+    siteshot: https://www.hellozhw.cn/images/siteshot.jpg
+```

@@ -52,13 +52,13 @@ code_blocks: # 代码块设置
 #   icon: link || the description || color（图标: 链接 || 描述 || 颜色）
 social: # 社交媒体设置
   fab fa-github: https://github.com/True-my-world-eye || Github || '#24292e' # GitHub链接示例
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe' # 邮箱链接示例
+  fas fa-envelope: mailto:hwzhang0722@163.com || Email || '#4a7dbe' # 邮箱链接示例
 
 # --------------------------------------
 # Image Settings（图片设置）
 # --------------------------------------
 
-favicon: /img/favicon.png # 网站图标路径
+favicon: /images/favicon.png # 网站图标路径
 
 avatar: # 头像设置
   img: /images/avatar.jpg # 头像图片路径
@@ -166,9 +166,9 @@ subtitle: # 副标题设置
   # 1 - hitokoto.cn（一言）
   # 2 - https://api.aa1.cn/doc/yiyan.html（一言API）
   # 3 - jinrishici.com（今日诗词）
-  source: false # 副标题来源，当前为禁用
+  source: true # 副标题来源，当前为禁用
   # If you close the typewriter effect, the subtitle will only show the first line of sub（如果关闭打字机效果，副标题将只显示第一行）
-  sub: # 副标题内容
+  sub: Open your mind to the possibilities. # 副标题内容
 
 # Article layout on the homepage（首页文章布局）
 # 1: Cover on the left, info on the right（封面在左，信息在右）
@@ -296,7 +296,7 @@ aside: # 侧边栏设置
       link: https://github.com/True-my-world-eye/blog # 按钮链接
   card_announcement: # 公告卡片设置
     enable: true # 是否启用公告卡片
-    content: This is my Blog # 公告内容
+    content: '<div id="announcement-content">加载中...</div><script src="/js/announcement.js"></script>' # 公告内容
   card_recent_post: # 最近文章卡片设置
     enable: true # 是否启用最近文章卡片
     # If set 0 will show all（如果设置为0将显示所有）
@@ -366,7 +366,7 @@ rightside_bottom: # 右下角按钮与底部的距离
 
 # Conversion between Traditional and Simplified Chinese（繁简中文转换）
 translate: # 繁简转换设置
-  enable: false # 是否启用繁简转换
+  enable: true # 是否启用繁简转换
   # The text of a button（按钮文本）
   default: 繁 # 默认按钮文本
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）（网站语言：1-繁体中文/2-简体中文）
@@ -376,7 +376,7 @@ translate: # 繁简转换设置
   # The text of the button when the language is Simplified Chinese（简体中文模式下按钮文本）
   msgToTraditionalChinese: "繁" # 切换到繁体的按钮文本
   # The text of the button when the language is Traditional Chinese（繁体中文模式下按钮文本）
-  msgToSimplifiedChinese: "簡" # 切换到简体的按钮文本
+  msgToSimplifiedChinese: "简" # 切换到简体的按钮文本
 
 # Read Mode（阅读模式）
 readmode: true # 是否启用阅读模式
@@ -432,7 +432,7 @@ copy: # 复制设置
 
 # Need to install the hexo-wordcount plugin（需要安装hexo-wordcount插件）
 wordcount: # 字数统计设置
-  enable: false # 是否启用字数统计
+  enable: true # 是否启用字数统计
   # Display the word count of the article in post meta（在文章元数据中显示文章字数）
   post_wordcount: true # 是否显示文章字数
   # Display the time to read the article in post meta（在文章元数据中显示阅读时间）
@@ -888,7 +888,7 @@ fireworks: # 烟花效果设置
 
 # Mouse click effects: Heart symbol（鼠标点击效果：心形符号）
 click_heart: # 点击心形设置
-  enable: true # 是否启用点击心形效果 
+  enable: true # 是否启用点击心形效果
   mobile: false # 是否在移动设备上启用
 
 # Mouse click effects: words（鼠标点击效果：文字）
