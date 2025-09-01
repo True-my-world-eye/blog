@@ -58,23 +58,44 @@ async function getVisitorInfo() {
     }
     
     // 生产环境使用实际API
-    const ipResponse = await fetch('https://api.ipify.org/?format=json');
-    const ipData = await ipResponse.json();
-    const ip = ipData.ip;
-    
-    // 使用IP-API获取地理位置信息
-    // 注意：免费版API有请求限制，如果流量大建议使用付费API或自建服务
-    const geoResponse = await fetch(`https://ipapi.co/${ip}/json/`);
-    const geoData = await geoResponse.json();
-    
-    return {
-      ip: ip,
-      province: geoData.region || '未知省份',
-      city: geoData.city || '未知城市',
-      district: geoData.district || '',
-      latitude: geoData.latitude || 0,
-      longitude: geoData.longitude || 0
-    };
+    try {
+      // 尝试使用HTTPS
+      const ipResponse = await fetch('https://api.ipify.org/?format=json');
+      const ipData = await ipResponse.json();
+      const ip = ipData.ip;
+      
+      // 使用IP-API获取地理位置信息
+      // 注意：免费版API有请求限制，如果流量大建议使用付费API或自建服务
+      const geoResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+      const geoData = await geoResponse.json();
+      
+      return {
+        ip: ip,
+        province: geoData.region || '未知省份',
+        city: geoData.city || '未知城市',
+        district: geoData.district || '',
+        latitude: geoData.latitude || 0,
+        longitude: geoData.longitude || 0
+      };
+    } catch (apiError) {
+      console.error('HTTPS API调用失败，尝试备用方案:', apiError);
+      // 如果HTTPS调用失败，尝试使用HTTP
+      const ipResponse = await fetch('http://api.ipify.org/?format=json');
+      const ipData = await ipResponse.json();
+      const ip = ipData.ip;
+      
+      const geoResponse = await fetch(`http://ipapi.co/${ip}/json/`);
+      const geoData = await geoResponse.json();
+      
+      return {
+        ip: ip,
+        province: geoData.region || '未知省份',
+        city: geoData.city || '未知城市',
+        district: geoData.district || '',
+        latitude: geoData.latitude || 0,
+        longitude: geoData.longitude || 0
+      };
+    }
   } catch (error) {
     console.error('获取访客信息失败:', error);
     // 返回默认值
@@ -392,10 +413,32 @@ async function updateAnnouncement() {
   `;
 }
 
+// 监听主题切换事件，当主题变化时更新公告栏
+function setupThemeChangeListener() {
+  // 创建一个MutationObserver来监听data-theme属性的变化
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        // 当data-theme属性变化时，更新公告栏
+        updateAnnouncement();
+      }
+    });
+  });
+  
+  // 开始观察document.documentElement的data-theme属性变化
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+  });
+}
+
 // 页面加载完成后执行
 window.addEventListener('DOMContentLoaded', () => {
   // 初始更新
   updateAnnouncement();
+  
+  // 设置主题切换监听
+  setupThemeChangeListener();
   
   // 每隔一小时更新一次（可以根据需要调整更新频率）
   setInterval(updateAnnouncement, 3600000);
