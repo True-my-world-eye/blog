@@ -367,17 +367,26 @@ async function updateAnnouncement() {
   // 根据访客地域获取相应的诗句
   const poem = getPoemByRegion(visitorInfo.province, visitorInfo.city);
   
-  // 更新公告栏内容，样式与图片中的效果一致
+  // 检测当前主题是否为深色模式
+  const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+  
+  // 根据主题设置不同的样式
+  const bgColor = isDarkMode ? '#1a1b27' : '#f0f8ff';
+  const textColor = isDarkMode ? '#fff' : '#333';
+  const accentColor = '#00c4b6';
+  
+  // 更新公告栏内容，根据主题使用不同的样式
   announcementContent.innerHTML = `
-    <div style="text-align: center; background-color: #1a1b27; color: #fff; padding: 10px; border-radius: 8px;">
+    <div style="text-align: center; background-color: ${bgColor}; color: ${textColor}; padding: 10px; border-radius: 8px; box-shadow: 0 2px 8px ${isDarkMode ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.1)'}; transition: all 0.3s;">
       <div style="margin-bottom: 10px;">
-        <span style="font-size: 1.1em;">🎉 欢迎信息 🎉</span>
+        <span style="font-size: 1.1em;">${isDarkMode ? '🎉 欢迎信息 🎉' : '📢 公告栏 📢'}</span>
       </div>
       <div style="margin-bottom: 5px; font-size: 0.9em;">
-        欢迎来自 <span style="color: #00c4b6;">${visitorInfo.province} ${visitorInfo.city}</span> 的小伙伴，${greeting}！您现在距离站长约 <span style="color: #00c4b6;">${distance}</span> 公里，当前的IP地址为：
-      </div>
-      <div style="margin-top: 5px; font-size: 0.9em;">
-        <span style="color: #00c4b6;">${visitorInfo.ip}</span>， ${poem}。希望本站能为你带来愉快的体验！
+        欢迎来自 
+        <span style="color: ${accentColor};">${visitorInfo.province} ${visitorInfo.city}</span> 的小伙伴，${greeting}！您现在距离站长约 
+        <span style="color: ${accentColor};">${distance}</span> 公里，当前的IP地址为：
+        <span style="color: ${accentColor};">${visitorInfo.ip}</span>， ${poem}
+        希望本站能为你带来愉快的体验！
       </div>
     </div>
   `;
