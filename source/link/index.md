@@ -20,7 +20,7 @@ Welcome to exchange friend links with me!
 - name: 
     link: https://www.hellozhw.cn
     avatar: https://www.hellozhw.cn/images/avatar.jpg
-    descr: 出卖我的爱~
+    descr: Open your mind to the posibilities.
     email: hwzhang0722@163.com
     siteshot: https://www.hellozhw.cn/images/siteshot.jpg
 ```
