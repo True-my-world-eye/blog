@@ -707,7 +707,7 @@ Echarts框架下针对python开发的
 
 #### 入门
 
-{% asset_img C:\Users\86130\AppData\Roaming\Typora\typora-user-images\2025-08-03152149043.png 2025-08-03152149043 %}
+{% asset_img 2025-08-03152149043.png 2025-08-03152149043 %}
 
 可设置全局配置项
 
@@ -715,7 +715,7 @@ Echarts框架下针对python开发的
 
 Json格式化工具链接：[懒人工具-json在线解析-在线JSON格式化工具-json校验-程序员必备](http://www.kuquidc.com/)
 
-（劣，无视图）https://www.lazytools.com.cn/tool/jsonformat.html
+（劣，无视图）https://www.lazytools.com.cn/tool/jsonformat.html 
 
 #### 创建时间线
 
